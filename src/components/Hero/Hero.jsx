@@ -2,6 +2,7 @@ import React from "react";
 import BgImage from "../../assets/bg-slate.png";
 import CoffeeMain from "../../assets/black.png";
 import Navbar from "../Navbar/Navbar";
+import { motion } from "framer-motion";
 
 const bgImage = {
   backgroundImage: `url(${BgImage})`,
@@ -22,9 +23,19 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]">
             {/* text content section */}
             <div className="text-lightOrange mt-[100px] md:mt-0 p-4 space-y-28">
-              <h1 className="text-7xl font-bold leading-tight ml-14">
+              <motion.h1
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 0.4,
+                }}
+                className="text-7xl font-bold leading-tight ml-14"
+              >
                 Blvck Tumbler
-              </h1>
+              </motion.h1>
               <div className="relative">
                 <div className="relative z-10 space-y-4">
                   <h1 className="text-2xl">Black lifestyle lovers,</h1>
